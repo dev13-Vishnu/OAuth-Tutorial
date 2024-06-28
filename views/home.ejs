@@ -31,7 +31,7 @@
             padding:10px;
             display:block;
         }
-        main.header{
+        main,header{
             max-width:960px;
             margin:30px auto;
             padding :0 10px;
@@ -42,9 +42,13 @@
 <body>
     <nav>
         <ul>
-            <li><a href="/auth/logout">Logout</a></li>
-            <li><a href="/auth/login">Login</a></li>
-            <li><a href="/">Homepage</a></li>
+            
+            <% if(!user){ %>
+                <li><a href="/auth/login">Login</a></li>
+                <% }else{ %>
+                <li><a href="/auth/logout">Logout</a></li>
+                <% } %>
+            <li><a href="/profile">Profile</a></li>
         </ul>
     </nav>
     <header>
